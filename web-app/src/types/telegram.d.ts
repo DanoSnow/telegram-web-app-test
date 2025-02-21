@@ -9,6 +9,7 @@ interface TelegramWebApp {
             // More parameters?
         };
     };
+    ready(): void;
     sendData(data: string): void;
     close(): void;
 }

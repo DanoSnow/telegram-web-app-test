@@ -1,8 +1,12 @@
+import { useEffect } from "react";
 import Map from "./components/Map"
 const telegram = window.Telegram.WebApp;
 
 function App() {
   //console.log(telegram);
+  useEffect(()=>{
+    telegram.ready()
+  }, [])
   const sendHelloWorld = () => {
     const data = {
       message: "Hello world!",
