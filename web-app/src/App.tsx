@@ -7,13 +7,13 @@ function App() {
   useEffect(() => {
     telegram.ready()
   }, [])
-  const sendHelloWorld = () => {
+  /*const sendHelloWorld = () => {
     const data = {
       message: "Hello world!",
       userId: telegram.initDataUnsafe.user?.id
     }
     telegram.sendData(JSON.stringify(data));
-  }
+  }*/
 
   return (
     <div className="flex flex-col p-4 gap-4">
