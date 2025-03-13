@@ -1,6 +1,5 @@
 import { createContext, useState } from "react"
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom"
-import Navbar from "./Components/Navbar";
 
 import HomePage from "./Pages/HomePage";
 import Map from "./Pages/Map";
@@ -19,7 +18,6 @@ function App() {
   return (
     <RouteContext.Provider value={{ currentRoute, setCurrentRoute }}>
       <BrowserRouter>
-        <Navbar />
         <div>
           <Routes>
             <Route path="/telegram-web-app-test/" element={<HomePage />} />
