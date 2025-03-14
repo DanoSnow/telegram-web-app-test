@@ -4,8 +4,8 @@ import mapData from "../data/locations"
 import { CellParams } from "../types/cell"
 
 const Map = () => {
-    const rows = 3;
-    const cols = 3;
+    const rows = 5;
+    const cols = 7;
     const mapGrid: (CellParams | null)[][] = Array.from({ length: rows }, () => 
         Array.from({ length: cols }, () => null)
     );
@@ -13,15 +13,13 @@ const Map = () => {
     mapData.forEach(cell => {
         const x = cell.x;
         const y = cell.y;
-        const row = y - 9;
-        const col = x - 9;
-        console.log(col, row)
+        const row = 12 - y;
+        const col = x - 5;
+        console.log(`(${x}, ${y}) -> (${col}, ${row})`);
         if (row >= 0 && row < rows && col >= 0 && col < cols) {
             mapGrid[row][col] = cell;
         }
     });
-
-    console.log(mapGrid)
 
     return (
         <div>
@@ -29,9 +27,9 @@ const Map = () => {
                 <Link to="/telegram-web-app-test">Back</Link>
             </div>
             <h1>This is map</h1>
-            <div className="p-1 gap-1 flex items-center justify-center">
+            <div className="p-1 mx-2 gap-1 flex flex-col items-center justify-center overflow-auto">
                 {mapGrid.map((row, rowIndex) => (
-                    <div key={rowIndex.toString()} className="flex flex-col space-y-1">
+                    <div key={rowIndex.toString()} className="flex flex-row gap-1">
                         {row.map((location, locationIndex) => (
                             <div key={locationIndex.toString()}>
                                 {location ? 

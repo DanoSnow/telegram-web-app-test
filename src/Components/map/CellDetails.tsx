@@ -12,6 +12,8 @@ const CellDetails = ({ cellDetails }: CellDetailsProps) => {
         setCellDetailsState(cellDetails)
     }, [cellDetails]);
 
+    console.log(cellDetailsState)
+
     return (
         <>
             <Dialog open={cellDetailsState.isOpen} as="div" className="relative z-10 focus:outline-none" onClose={cellDetailsState.onClose}>
